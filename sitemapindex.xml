@@ -7,30 +7,30 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>/categories/blog.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/ci.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/doctr.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/github.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/categories/nikola.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/rss.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>/sitemap.xml</loc>
-  <lastmod>2018-08-16T12:40:00Z</lastmod>
+  <lastmod>2018-08-16T12:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>
