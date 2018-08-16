@@ -15,4 +15,4 @@ env:
 script:
   - set -e
   - nikola build
-  - doctr deploy . --built-docs output/
+  - doctr deploy . --no-require-master --built-docs output/
