@@ -1,0 +1,13 @@
+sudo: false
+language: python
+
+python:
+  - 3.6
+
+install:
+  - pip install "Nikola[extras]" doctr
+
+script:
+  - set -e
+  - nikola build
+  - doctr deploy . --built-docs output/
