@@ -1,17 +1,3 @@
-This folder contains the source used to generate a static site using Nikola.
+# python-friends blog source
 
-Installation and documentation at https://getnikola.com/
-
-Configuration file for the site is ``conf.py``.
-
-To build the site::
-
-    nikola build
-
-To see it::
-
-    nikola serve -b
-
-To check all available commands::
-
-    nikola help
+[![Build Status](https://travis-ci.org/python-friends/python-friends.github.io.svg?branch=master)](https://travis-ci.org/python-friends/python-friends.github.io)
