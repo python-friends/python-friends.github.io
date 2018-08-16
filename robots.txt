@@ -1,4 +1,4 @@
-Sitemap: https://python-friends.github.io/sitemapindex.xml
+Sitemap: /sitemapindex.xml
 
 User-Agent: *
-Host: python-friends.github.io
+Host: 
