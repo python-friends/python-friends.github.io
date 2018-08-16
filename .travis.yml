@@ -12,7 +12,10 @@ env:
     # Doctr deploy key for python-friends/python-friends.github.io
     - secure: "AAUsBeQ3cn/uThoECNvHW9YPSaJjLBJV+aQozPZ2MeFNSv2UXJN4zW2UQUmknxoFPRQBa8n83gQ0g2/hYCQyFg/+ZkWAwEehzrOLaWwSnSPGxgsXELTJl3ISYSxUy0tbNZkKt0A0ZQad4AR+3O8Oim6yuMAHYxzTR709mvG4+YY8k0OWTQODbI0v5s8wU2ILDD7+IT4lKbV4kSIdBN6aoeJo7p4vwfUyFTfo1L172zHsJP+FOHmDz1HWnpkNcW7dzWiLoTf1fB6o6xoUjih4FjowDwsDRCEoXUmSaB1K6T3wuuiZrUjpVEm+DHGvqgxfQO+7QVTVwPu4gsRCIuZHU8JZyeITlcxqYcPgBW7Av5RImnnE1bCU9McmuMUjKhiDGMoKBYdS9eymOzm7CEU/dn3xASlKT7DEAa/B7FsTAvguWHPtzB62gnZD8RIr8XdpphJKkyTd0Inls6KpwKV9hiY7iOgnBqDckddpQHILzUrityv0L4DlEqcfGxVZXbHPN+lj+WCmfsIwCkeo5KfMDc14dZYUHoCVTLEYj51tZ9ppfJkRSMc8lPbS9Z0Fc4/aR0ChuoBl3+rf6F9UNqT3mI6HsI5WAjAUcj9lk6uP2Tncq5bi3EWLvRv7Wpmgvvj6IfPf5VWQq5DNmozXzT0rE8E3zS3z+sEhaae89bDZFPM="
 
+doctr:
+  require-master: false
+
 script:
   - set -e
   - nikola build
-  - doctr deploy . --no-require-master --built-docs output/
+  - doctr deploy . --built-docs output/
