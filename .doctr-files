@@ -129,6 +129,8 @@
 ./pages/theming/index.rst
 ./posts/first-blog/index.html
 ./posts/first-blog/index.rst
+./posts/test/index.html
+./posts/test/index.rst
 ./posts/welcome-to-nikola/index.html
 ./posts/welcome-to-nikola/index.rst
 ./robots.txt
