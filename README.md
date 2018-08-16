@@ -1,3 +1,3 @@
 # python-friends blog source
 
-[![Build Status](https://travis-ci.org/python-friends/python-friends.github.io.svg?branch=master)](https://travis-ci.org/python-friends/python-friends.github.io)
+[![Build Status](https://travis-ci.org/python-friends/python-friends.github.io.svg?branch=src)](https://travis-ci.org/python-friends/python-friends.github.io)
