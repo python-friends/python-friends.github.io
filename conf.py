@@ -139,6 +139,7 @@ NAVIGATION_LINKS = {
         ("/pages/about/", "About"),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
+        ("https://github.com/python-friends/", "GitHub"),
     ),
 }
 
