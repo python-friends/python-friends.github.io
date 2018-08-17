@@ -24,6 +24,8 @@
 ./assets/js/tag_cloud_data.json
 ./assets/xml/atom.xsl
 ./assets/xml/rss.xsl
+./categories/automation.xml
+./categories/automation/index.html
 ./categories/blog.xml
 ./categories/blog/index.html
 ./categories/ci.xml
@@ -33,6 +35,8 @@
 ./categories/github.xml
 ./categories/github/index.html
 ./categories/index.html
+./categories/mycroscpe.xml
+./categories/mycroscpe/index.html
 ./categories/nikola.xml
 ./categories/nikola/index.html
 ./favicon.ico
@@ -45,6 +49,8 @@
 ./pages/about/index.src.html
 ./pages/example/index.html
 ./pages/example/index.rst
+./posts/auto-scope/index.html
+./posts/auto-scope/index.src.html
 ./posts/welcome-to-the-blog/index.html
 ./posts/welcome-to-the-blog/index.src.html
 ./robots.txt
