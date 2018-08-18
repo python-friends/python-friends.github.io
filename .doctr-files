@@ -28,6 +28,8 @@
 ./categories/automation/index.html
 ./categories/blog.xml
 ./categories/blog/index.html
+./categories/cad.xml
+./categories/cad/index.html
 ./categories/ci.xml
 ./categories/ci/index.html
 ./categories/doctr.xml
@@ -51,6 +53,8 @@
 ./pages/about/index.src.html
 ./pages/example/index.html
 ./pages/example/index.rst
+./posts/auto-scope-stage-driver/index.html
+./posts/auto-scope-stage-driver/index.src.html
 ./posts/auto-scope/index.html
 ./posts/auto-scope/index.src.html
 ./posts/welcome-to-the-blog/index.html
