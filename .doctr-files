@@ -40,6 +40,8 @@
 ./categories/nikola.xml
 ./categories/nikola/index.html
 ./favicon.ico
+./images/auto-scope-1.png
+./images/auto-scope-2.png
 ./images/nikola.png
 ./index.html
 ./listings/hello.py
