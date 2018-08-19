@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python Friends (Posts about mycroscope)</title><link>/</link><description></description><atom:link href="/categories/mycroscope.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:python.friends.py@gmail.com"&gt;python-friends&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 Aug 2018 03:34:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Auto-Scope - Stage Driver V1</title><link>/posts/auto-scope-stage-driver/</link><dc:creator>Wytamma</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python Friends (Posts about mycroscope)</title><link>/</link><description></description><atom:link href="/categories/mycroscope.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:python.friends.py@gmail.com"&gt;python-friends&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 Aug 2018 03:40:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Auto-Scope - Stage Driver V1</title><link>/posts/auto-scope-stage-driver/</link><dc:creator>Wytamma</dc:creator><description>&lt;p&gt;
   Well it only took all of Saturday, but I finshed the protoype of the Auto-Scope stage driver. 
 &lt;/p&gt;
-&lt;a class="reference" href="/images/auto-scope-1.png" alt="auto-scope-1"&gt;&lt;img src="/images/auto-scope-1.thumbnail.png"&gt;&lt;/a&gt;
-&lt;a class="reference" href="/images/auto-scope-2.png" alt="auto-scope-2"&gt;&lt;img src="/images/auto-scope-2.thumbnail.png"&gt;&lt;/a&gt;
+&lt;a class="reference" href="/images/auto-scope-1.png" alt="auto-scope-1"&gt;&lt;img src="/images/auto-scope-1.png"&gt;&lt;/a&gt;
+&lt;a class="reference" href="/images/auto-scope-2.png" alt="auto-scope-2"&gt;&lt;img src="/images/auto-scope-2.png"&gt;&lt;/a&gt;
 &lt;p&gt;
   The design is pretty simple; there are two mounting points on stage that I chose to use to support the unit.
   The unit is designed to be modular for easy printing and upgrading.
