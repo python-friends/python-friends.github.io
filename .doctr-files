@@ -24,6 +24,8 @@
 ./assets/js/tag_cloud_data.json
 ./assets/xml/atom.xsl
 ./assets/xml/rss.xsl
+./categories/auto-scope.xml
+./categories/auto-scope/index.html
 ./categories/automation.xml
 ./categories/automation/index.html
 ./categories/blog.xml
@@ -37,8 +39,6 @@
 ./categories/github.xml
 ./categories/github/index.html
 ./categories/index.html
-./categories/mycroscope.xml
-./categories/mycroscope/index.html
 ./categories/nikola.xml
 ./categories/nikola/index.html
 ./favicon.ico
