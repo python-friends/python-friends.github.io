@@ -1226,11 +1226,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
-# Google Analytics or whatever else you use. Added to the bottom of <body>
-# in the default template (base.tmpl).
-# (translatable)
-BODY_END = """
+EXTRA_HEAD_DATA = """
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84570235-4"></script>
 <script>
@@ -1241,6 +1237,10 @@ BODY_END = """
   gtag('config', 'UA-84570235-4');
 </script>
 """
+# Google Analytics or whatever else you use. Added to the bottom of <body>
+# in the default template (base.tmpl).
+# (translatable)
+# BODY_END = ""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
