@@ -3,3 +3,5 @@ cache
 __pycache__
 output
 .doit.db.db
+*.psd
+.doit.db.db
