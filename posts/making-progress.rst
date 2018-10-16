@@ -13,7 +13,8 @@ We are making progress on the auto-scope project! The mechanical aspects of the 
 Check out this (oldish) video of the stage moving around. Look at it go!
 
 .. youtube:: 3XsQCkF1SrE
-   :align: center   
+   :align: center
+   :width: 100%
 
 .. TEASER_END
 
@@ -24,7 +25,8 @@ I’ve recently been working on the interactions between the camera and focus to
 Because we are using an `open loop system 
 <https://en.wikipedia.org/wiki/Motor_control#Open_loop_control>`_ the microscope doesn’t have a way to tell it's current location (only how far it's moved from the starting position). To ensure reproducibility we always initialise the microscope with the focus at maximum height, that way the microscope knows one of its limits, and we can work down from this position.
 
-When taking photos through the microscope with a camera like the RPi V2, the wide lens results in a lot of black surrounding the actual image we want to capture. Ideally, for image stitching, we'd like a square picture with no boarded. We could manually crop this additional border. However, we have Python https://xkcd.com/353/.
+When taking photos through the microscope with a camera like the RPi V2, the wide lens results in a lot of black surrounding the actual image we want to capture. Ideally, for image stitching, we'd like a square picture with no boarded. We could manually crop this additional border. However, we have Python`
+<https://xkcd.com/353/>`_.
 
 .. image:: /images/auto-scope-cam/full.png
     :align: center
@@ -62,6 +64,6 @@ To find the optimal focal height we need to map the focal plane and try to maxim
 You can check out all this camera code and more on `GitHub
 <https://github.com/python-friends/auto-scope>`_ or `pip install opencv-contrib-python` and try it yourself.
 
-* My 3D printed gears suffer from a slight backlash that results in small errors when the stepper motors change direction. I think we should move to a timing belt system to prevent this in the future, however, slide scanning is still possible even with these errors. 
+\* My 3D printed gears suffer from a slight backlash that results in small errors when the stepper motors change direction. I think we should move to a timing belt system to prevent this in the future, however, slide scanning is still possible even with these errors. 
 
 
