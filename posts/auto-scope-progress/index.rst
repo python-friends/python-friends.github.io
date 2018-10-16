@@ -37,7 +37,7 @@ So, to automatically extract our square region of interest we first need to calc
     :align: center
 
 To find the center of the circle we use a method from computer vision called `blob centroid detection 
-<https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/>`_. in short, we take the average position of all the points in the circle.
+<https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/>`_. In short, we take the average position of all the points in the circle.
 
 .. image:: /images/auto-scope-cam/center.png
     :align: center
