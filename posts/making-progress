@@ -11,7 +11,6 @@
 We are making progress on the auto-scope project! The mechanical aspects of the microscope are all finished and working*. We’ve written most of the code to control the x, y, and z of the microscope and we’re starting to move onto the whole slide stitching and machine learning aspects of the project. 
 
 Check out this (oldish) video of the stage moving around. Look at it go!
-video
 
 .. youtube:: 3XsQCkF1SrE
    :align: center   
