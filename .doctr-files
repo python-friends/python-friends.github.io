@@ -78,6 +78,8 @@
 ./pages/about/index.src.html
 ./pages/example/index.html
 ./pages/example/index.rst
+./posts/auto-scope-progress/index.html
+./posts/auto-scope-progress/index.rst
 ./posts/auto-scope-stage-driver/index.html
 ./posts/auto-scope-stage-driver/index.src.html
 ./posts/auto-scope/index.html
