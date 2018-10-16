@@ -35,6 +35,8 @@
 ./categories/cat_posts/index.html
 ./categories/ci.xml
 ./categories/ci/index.html
+./categories/cv2.xml
+./categories/cv2/index.html
 ./categories/doctr.xml
 ./categories/doctr/index.html
 ./categories/fusion360.xml

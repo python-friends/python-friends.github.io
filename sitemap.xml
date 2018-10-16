@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>/archive.html</loc>
-  <lastmod>2018-10-16T08:29:00Z</lastmod>
+  <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>/categories/</loc>
@@ -42,6 +42,10 @@
   <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
  <url>
+  <loc>/categories/cv2/</loc>
+  <lastmod>2018-10-16T08:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>/categories/doctr/</loc>
   <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
@@ -59,11 +63,11 @@
  </url>
  <url>
   <loc>/listings/</loc>
-  <lastmod>2018-10-16T08:29:00Z</lastmod>
+  <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>/listings/hello.py.html</loc>
-  <lastmod>2018-10-16T08:29:00Z</lastmod>
+  <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>/pages/about/</loc>
@@ -71,6 +75,10 @@
  </url>
  <url>
   <loc>/pages/example/</loc>
+  <lastmod>2018-10-16T08:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>/posts/auto-scope-progress/</loc>
   <lastmod>2018-10-16T08:30:00Z</lastmod>
  </url>
  <url>
