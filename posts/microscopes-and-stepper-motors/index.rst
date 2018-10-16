@@ -156,10 +156,10 @@ This alows us to setup and set the intial output of each pin on lines 9 and 10.
     ]
 
 We define the complete sequence of signals required for one cycle with half stepping on line 12. 
-The 1's and 0's tell us which pins for be off(0) or on(1).
+The 1's and 0's tell us which pins should be off(0) or on(1).
 This `halfstep_seq` variable is a list of list. 
-To access the first element of the first nested list we can you the notation halfstep_seq[0][0].
-This would return 1. We'll use this nested list indexing to turn our motor.
+To access the first element of the first nested list, we can use the notation halfstep_seq[0][0], which returns 1. 
+We'll use this nested list indexing to turn our motor.
 
 .. code-block:: python
     :number-lines:
@@ -167,9 +167,9 @@ This would return 1. We'll use this nested list indexing to turn our motor.
     for i in range(512):
         ...
 
-The main logic? of our script can be found in the nested for loops on lines X to Y. 
-The `range(n)` function returns a list of intigers from 0 to n. So range(3) returns [0,1,2].
-in our first for loop we use range to create a list of 512 intergers 
+The main logic of our script can be found in the nested for loops on lines X to Y. 
+The `range(n)` function returns a list of integers from 0 to n. So range(3) returns [0,1,2].
+In our first for loop, we use range to create a list of 512 integers 
 (the of steps number required for one required for one revolution).
 
 .. code-block:: python
@@ -179,7 +179,7 @@ in our first for loop we use range to create a list of 512 intergers
         ...
 
 We then cycle through each halfstep in the halfstep_seq, 
-each halfstep being a list of lengh 4 with the state of each pin for that step.
+each halfstep being a list of length 4 with the state of each pin for that step.
 
 .. code-block:: python
     :number-lines:
@@ -188,17 +188,17 @@ each halfstep being a list of lengh 4 with the state of each pin for that step.
         GPIO.output(control_pins[i], val)
         time.sleep(0.001)
 
-In our final for loop we set each of the control pins to the aproprperate state.
-We use the `enumerate` function to return the the index and value of each element in the halfstep list.
-we use the index (i) to access the correct pin, and set its corisponing value (val).
+In our final for loop, we set each of the control pins to the appropriate state.
+We use the `enumerate` function to return the index and value of each element in the halfstep list.
+We use the index (i) to access the correct pin, and set its corresponding value (val).
 
 .. code-block:: python
     :number-lines:
 
     GPIO.cleanup()
 
-on the final line we clean up the GIPO pins.
+On the final line, we clean up the GIPO pins.
 
 And that's it, running these X lines of code will turn the attached stepper motor 360˚. 
-You can try playing with the 512 val to change the aumount the motor will turn. 
-If you're feeling cofidient you could even try gernlaise this code into a function (or wait for our next post).
+You can try playing with the 512 value to change the amount the motor will turn. 
+If you're feeling confident, you could even try to generalise this code into a function (or wait for our next post).
