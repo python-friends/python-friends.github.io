@@ -1,7 +1,7 @@
 .. title: Looking at microscope slides with computer vision
 .. slug: auto-scope-progress
 .. date: 2018-10-16 00:00:00 UTC+10:00
-.. tags: draft, auto-scope, cv2
+.. tags: auto-scope, cv2
 .. category: 
 .. link: 
 .. description: 
