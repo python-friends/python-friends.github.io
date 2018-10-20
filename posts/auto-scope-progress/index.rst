@@ -24,6 +24,7 @@ I’ve recently been working on the interactions between the camera and focus dr
 
 .. image:: /images/auto-scope-cam/cam-focus.jpg
     :align: center
+    :width: 200px
 
 Because we are using an `open loop system 
 <https://en.wikipedia.org/wiki/Motor_control#Open_loop_control>`_ the microscope doesn’t have a way to tell its current location (only how far it's moved from the starting position). To ensure reproducibility we always initialise the microscope with the focus at maximum height, that way the microscope knows one of its limits, and we can work down from this position.
