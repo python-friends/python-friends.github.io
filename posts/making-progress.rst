@@ -37,7 +37,7 @@ So, to automatically extract our square region of interest we first need to calc
     :align: center
 
 To find the center of the circle we use a method from computer vision called `blob centroid detection 
-<https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/>`_. In short, we take the average position of all the points in the circle.
+<https://www.learnopencv.com/find-center-of-blob-centroid-using-opencv-cpp-python/>`_. In short, we take the average position of all the points in the white circle.
 
 .. image:: /images/auto-scope-cam/center.png
     :align: center
@@ -54,12 +54,12 @@ We can then feed this square information to the camera, that will zoom in and re
     :align: center
 
 Now that we have a tile we need a way to tell if it’s in focus. There are many 'blurriness metrics' for example the `variation of the Laplacian
-<https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/>`_. This method returns high values if an image contains high variance in rapid intensity change regions (associated with focused images).
+<https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/>`_. This method returns high values if an image contains high variance in rapid intensity change regions (as with focused images).
 
 .. image:: /images/auto-scope-cam/focus.png
     :align: center
 
-To find the optimal focal height we need to map the focal plane and try to maximise the variation of the Laplacian (see bar plot). The initial scan of the focal plane is done in large steps down the focal plane until we find a peak. Once the course mapping is complete we then switch to fine steps to map the peak in detail. Now that we have a fine grain map of the focal plane peak we can simply move to focus with the highest variation. This course, fine, find algorithm is implemented in the `auto_focus` method of the autoscope `Autoscope` class.
+To find the optimal focal height we need to map the focal plane and try to maximise the variation of the Laplacian (see bar plot). The initial scan of the focal plane is done in large steps down the focal plane until we find a peak. Once the course mapping is complete we then switch to fine steps to map the peak in detail. Now that we have a detailed map of the focal plane peak we can simply move to the focal point with the highest variation. This course, fine, find algorithm is implemented in the `auto_focus` method of the autoscope `Autoscope` class.
 
 You can check out all this camera code and more on `GitHub
 <https://github.com/python-friends/auto-scope>`_ or `pip install opencv-contrib-python` and try it yourself.
