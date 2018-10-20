@@ -20,7 +20,10 @@ Check out this (oldish) video of the stage moving around. Look at it go!
 
 Currently, the microscope has stage control (x, y), focus control (z)  and a camera. We’re using an 8MP Raspberry Pi V2 camera to capture images of the slide. Two 28byj-48 stepper motors control the stage (one for x and one for y), and another stepper motor works the focus knob. 
 
-I’ve recently been working on the interactions between the camera and focus to capture tiles and enabling autofocusing. I thought I should detail some of the aspects of this part of the project while they are fresh in my mind.
+I’ve recently been working on the interactions between the camera and focus drive to capture tiles and enabling autofocusing. I thought I should detail some of the aspects of this part of the project while they are fresh in my mind.
+
+.. image:: /images/auto-scope-cam/cam-focus.jpg
+    :align: center
 
 Because we are using an `open loop system 
 <https://en.wikipedia.org/wiki/Motor_control#Open_loop_control>`_ the microscope doesn’t have a way to tell its current location (only how far it's moved from the starting position). To ensure reproducibility we always initialise the microscope with the focus at maximum height, that way the microscope knows one of its limits, and we can work down from this position.
