@@ -11,7 +11,8 @@
 We've got a 100MB slide scan (10x10 tiles at 400x) stiched and hosted. 
 
 .. raw:: html
-  <iframe src="https://tiles.python-friends.com"></iframe>
+  <iframe src="https://tiles.python-friends.com">
+  </iframe>
 
 Check out the source at `tiles.python-friends.com
 <https://tiles.python-friends.com/>`_.
