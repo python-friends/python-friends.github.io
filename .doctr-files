@@ -44,6 +44,8 @@
 ./categories/github.xml
 ./categories/github/index.html
 ./categories/index.html
+./categories/leaflet.xml
+./categories/leaflet/index.html
 ./categories/nikola.xml
 ./categories/nikola/index.html
 ./favicon.ico
@@ -90,6 +92,8 @@
 ./posts/auto-scope/index.src.html
 ./posts/microscopes-and-stepper-motors/index.html
 ./posts/microscopes-and-stepper-motors/index.rst
+./posts/partial-slide-scan/index.html
+./posts/partial-slide-scan/index.rst
 ./posts/welcome-to-the-blog/index.html
 ./posts/welcome-to-the-blog/index.src.html
 ./robots.txt
