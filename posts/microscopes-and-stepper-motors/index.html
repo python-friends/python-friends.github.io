@@ -107,87 +107,87 @@ we just have to know which pins we have used as we will refer to them in the cod
 For power I've connect a 5V power pin to the postive (+) terminal on the motor driver and the same for ground and negative (-).</p>
 <p>The (<a class="reference external" href="https://www.medium.com/">stolen</a>) code below will turn the motor 360˚.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-1"> 1</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-2"> 2</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-3"> 3</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-4"> 4</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-5"> 5</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-6"> 6</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-7"> 7</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-8"> 8</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-9"> 9</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-10">10</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-11">11</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-12">12</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-13">13</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-14">14</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-15">15</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-16">16</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-17">17</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-18">18</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-19">19</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-20">20</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-21">21</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-22">22</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-23">23</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-24">24</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-25">25</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-26">26</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-27">27</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-28">28</a>
-<a href="#rest_code_a52039e0ffb1446bbfec9e409f1d4e68-29">29</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-1"></a><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-2"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-3"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-4"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-5"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-6"></a><span class="n">control_pins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-7"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-8"></a><span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">control_pins</span><span class="p">:</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-9"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-10"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-11"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-12"></a><span class="n">halfstep_seq</span> <span class="o">=</span> <span class="p">[</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-13"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-14"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-15"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-16"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-17"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-18"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-19"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-20"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-21"></a><span class="p">]</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-22"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-23"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">512</span><span class="p">):</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-24"></a>    <span class="k">for</span> <span class="n">halfstep</span> <span class="ow">in</span> <span class="n">halfstep_seq</span><span class="p">:</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-25"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">halfstep</span><span class="p">):</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-26"></a>            <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">control_pins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">val</span><span class="p">)</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-27"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-28"></a>
-<a name="rest_code_a52039e0ffb1446bbfec9e409f1d4e68-29"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-1"> 1</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-2"> 2</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-3"> 3</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-4"> 4</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-5"> 5</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-6"> 6</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-7"> 7</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-8"> 8</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-9"> 9</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-10">10</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-11">11</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-12">12</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-13">13</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-14">14</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-15">15</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-16">16</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-17">17</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-18">18</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-19">19</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-20">20</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-21">21</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-22">22</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-23">23</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-24">24</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-25">25</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-26">26</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-27">27</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-28">28</a>
+<a href="#rest_code_ded0c96b39554e68a22cb819ad1e2276-29">29</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-1"></a><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-3"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-4"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-5"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-6"></a><span class="n">control_pins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-7"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-8"></a><span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">control_pins</span><span class="p">:</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-9"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-10"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-11"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-12"></a><span class="n">halfstep_seq</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-13"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-14"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-15"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-16"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-17"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-18"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-19"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-20"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-21"></a><span class="p">]</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-22"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-23"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">512</span><span class="p">):</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-24"></a>    <span class="k">for</span> <span class="n">halfstep</span> <span class="ow">in</span> <span class="n">halfstep_seq</span><span class="p">:</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-25"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">halfstep</span><span class="p">):</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-26"></a>            <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">control_pins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">val</span><span class="p">)</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-27"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-28"></a>
+<a name="rest_code_ded0c96b39554e68a22cb819ad1e2276-29"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>Lets go though what is happening line by line.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e5cda2506e6342db84e8b7041d9a4a6f-1">1</a>
-<a href="#rest_code_e5cda2506e6342db84e8b7041d9a4a6f-2">2</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_e5cda2506e6342db84e8b7041d9a4a6f-1"></a><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
-<a name="rest_code_e5cda2506e6342db84e8b7041d9a4a6f-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_45a88c0080c3453f9ab954439605cad4-1">1</a>
+<a href="#rest_code_45a88c0080c3453f9ab954439605cad4-2">2</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_45a88c0080c3453f9ab954439605cad4-1"></a><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<a name="rest_code_45a88c0080c3453f9ab954439605cad4-2"></a><span class="kn">import</span> <span class="nn">time</span>
 </pre></td>
 </tr></table>
 <p>On the first 2 lines we import some required packages.
 There are over 150,000 Python packages on The Python Package Index (PyPI).
 So this import statment help us define which packages we'll be using.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d0491b59144f43329d4471ea61fe8c88-4">4</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_d0491b59144f43329d4471ea61fe8c88-4"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e4fc72d7d41e403b8f2c8e7d458c7f01-4">4</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_e4fc72d7d41e403b8f2c8e7d458c7f01-4"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>On line 4 we set the mode of the of the GPIO pins to BCM,
 this allows us to select GPIO pins based on name instead of postion.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_634e499a80294919a838e129dde54b17-6">6</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_634e499a80294919a838e129dde54b17-6"></a><span class="n">control_pins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0727d4de9dc54a758862916f3ddeb084-6">6</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0727d4de9dc54a758862916f3ddeb084-6"></a><span class="n">control_pins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
 </pre></td>
 </tr></table>
 <p>On line 6 we define a list of GIPO pins that we'll use to control the motor.
@@ -196,21 +196,21 @@ If you wanted to access the second element of this list you would use control_pi
 See <a class="reference external" href="http://python-history.blogspot.com/2013/10/why-python-uses-0-based-indexing.html">this blog</a>
 if you're wondering why (Don).</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e0278230030b4b19a2f57e5f0d4289a6-8"> 8</a>
-<a href="#rest_code_e0278230030b4b19a2f57e5f0d4289a6-9"> 9</a>
-<a href="#rest_code_e0278230030b4b19a2f57e5f0d4289a6-10">10</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_e0278230030b4b19a2f57e5f0d4289a6-8"></a><span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">control_pins</span><span class="p">:</span>
-<a name="rest_code_e0278230030b4b19a2f57e5f0d4289a6-9"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<a name="rest_code_e0278230030b4b19a2f57e5f0d4289a6-10"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_77a947a21a2741c096b49d0ad3c8e816-8"> 8</a>
+<a href="#rest_code_77a947a21a2741c096b49d0ad3c8e816-9"> 9</a>
+<a href="#rest_code_77a947a21a2741c096b49d0ad3c8e816-10">10</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_77a947a21a2741c096b49d0ad3c8e816-8"></a><span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">control_pins</span><span class="p">:</span>
+<a name="rest_code_77a947a21a2741c096b49d0ad3c8e816-9"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<a name="rest_code_77a947a21a2741c096b49d0ad3c8e816-10"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>We use a <cite>for</cite> loop on line 8 to iterate through each element (pin) <cite>in</cite> the control_pins list.
 This alows us to setup and set the intial output of each pin on lines 9 and 10.</p>
-<pre class="code python"><a name="rest_code_ff46e328cab74f5285e96d174db229c0-1"></a><span class="n">halfstep_seq</span> <span class="o">=</span> <span class="p">[</span>
-<a name="rest_code_ff46e328cab74f5285e96d174db229c0-2"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_ff46e328cab74f5285e96d174db229c0-3"></a>    <span class="o">...</span>
-<a name="rest_code_ff46e328cab74f5285e96d174db229c0-4"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<a name="rest_code_ff46e328cab74f5285e96d174db229c0-5"></a><span class="p">]</span>
+<pre class="code python"><a name="rest_code_3ae622f4b94a40a5b4370c1bab46b6ef-1"></a><span class="n">halfstep_seq</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_3ae622f4b94a40a5b4370c1bab46b6ef-2"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_3ae622f4b94a40a5b4370c1bab46b6ef-3"></a>    <span class="o">...</span>
+<a name="rest_code_3ae622f4b94a40a5b4370c1bab46b6ef-4"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<a name="rest_code_3ae622f4b94a40a5b4370c1bab46b6ef-5"></a><span class="p">]</span>
 </pre>
 <p>We define the complete sequence of signals required for one cycle with half stepping on line 12.
 The 1's and 0's tell us which pins should be off(0) or on(1).
@@ -218,10 +218,10 @@ This <cite>halfstep_seq</cite> variable is a list of list.
 To access the first element of the first nested list, we can use the notation halfstep_seq[0][0], which returns 1.
 We'll use this nested list indexing to turn our motor.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_be73474af46247169ff8d854f6befc8c-1">1</a>
-<a href="#rest_code_be73474af46247169ff8d854f6befc8c-2">2</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_be73474af46247169ff8d854f6befc8c-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">512</span><span class="p">):</span>
-<a name="rest_code_be73474af46247169ff8d854f6befc8c-2"></a>    <span class="o">...</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_144732b5cebe4be49643dbc2ee43f758-1">1</a>
+<a href="#rest_code_144732b5cebe4be49643dbc2ee43f758-2">2</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_144732b5cebe4be49643dbc2ee43f758-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">512</span><span class="p">):</span>
+<a name="rest_code_144732b5cebe4be49643dbc2ee43f758-2"></a>    <span class="o">...</span>
 </pre></td>
 </tr></table>
 <p>The main logic of our script can be found in the nested for loops on lines X to Y.
@@ -229,29 +229,29 @@ The <cite>range(n)</cite> function returns a list of integers from 0 to n. So ra
 In our first for loop, we use range to create a list of 512 integers
 (the of steps number required for one required for one revolution).</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_900b3f4148204d4aa567faee3dd6d1e8-1">1</a>
-<a href="#rest_code_900b3f4148204d4aa567faee3dd6d1e8-2">2</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_900b3f4148204d4aa567faee3dd6d1e8-1"></a><span class="k">for</span> <span class="n">halfstep</span> <span class="ow">in</span> <span class="n">halfstep_seq</span><span class="p">:</span>
-<a name="rest_code_900b3f4148204d4aa567faee3dd6d1e8-2"></a>    <span class="o">...</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1e728912036d444b8effecec1f7c432f-1">1</a>
+<a href="#rest_code_1e728912036d444b8effecec1f7c432f-2">2</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1e728912036d444b8effecec1f7c432f-1"></a><span class="k">for</span> <span class="n">halfstep</span> <span class="ow">in</span> <span class="n">halfstep_seq</span><span class="p">:</span>
+<a name="rest_code_1e728912036d444b8effecec1f7c432f-2"></a>    <span class="o">...</span>
 </pre></td>
 </tr></table>
 <p>We then cycle through each halfstep in the halfstep_seq,
 each halfstep being a list of length 4 with the state of each pin for that step.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_416e24d1bc9347b5ad9c520818eef073-1">1</a>
-<a href="#rest_code_416e24d1bc9347b5ad9c520818eef073-2">2</a>
-<a href="#rest_code_416e24d1bc9347b5ad9c520818eef073-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_416e24d1bc9347b5ad9c520818eef073-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">halfstep</span><span class="p">):</span>
-<a name="rest_code_416e24d1bc9347b5ad9c520818eef073-2"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">control_pins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">val</span><span class="p">)</span>
-<a name="rest_code_416e24d1bc9347b5ad9c520818eef073-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_81c8c2e1f032404eb1ff011c017f7d6b-1">1</a>
+<a href="#rest_code_81c8c2e1f032404eb1ff011c017f7d6b-2">2</a>
+<a href="#rest_code_81c8c2e1f032404eb1ff011c017f7d6b-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_81c8c2e1f032404eb1ff011c017f7d6b-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">halfstep</span><span class="p">):</span>
+<a name="rest_code_81c8c2e1f032404eb1ff011c017f7d6b-2"></a>    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">control_pins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">val</span><span class="p">)</span>
+<a name="rest_code_81c8c2e1f032404eb1ff011c017f7d6b-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>In our final for loop, we set each of the control pins to the appropriate state.
 We use the <cite>enumerate</cite> function to return the index and value of each element in the halfstep list.
 We use the index (i) to access the correct pin, and set its corresponding value (val).</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_46d4a1dbc86143cc91c49b9331c0f37e-1">1</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_46d4a1dbc86143cc91c49b9331c0f37e-1"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1a010c0469244f39841ce4986b7d8f00-1">1</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1a010c0469244f39841ce4986b7d8f00-1"></a><span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>On the final line, we clean up the GIPO pins.</p>
