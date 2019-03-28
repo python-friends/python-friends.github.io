@@ -10,4 +10,4 @@
 
 Auto-scope 2.0 
 
-I'm going to outline a some ideas and a pootenial asdf 
+
