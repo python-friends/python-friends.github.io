@@ -11,4 +11,4 @@
 We've got a 100MB slide scan (10x10 tiles at 400x) stiched and hosted. 
 
 Check out the source at `tiles.python-friends.com
-<https://tiles.python-friends.com/>`_.
+<http://tiles.python-friends.com.s3-website-ap-southeast-2.amazonaws.com/>`_.
