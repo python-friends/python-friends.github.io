@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python Friends (Posts about auto-scope)</title><link>/</link><description></description><atom:link href="/categories/auto-scope.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:python.friends.py@gmail.com"&gt;python-friends&lt;/a&gt; </copyright><lastBuildDate>Sun, 16 Nov 2025 03:53:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A partial slide scan.</title><link>/posts/partial-slide-scan/</link><dc:creator>Wytamma</dc:creator><description>&lt;p&gt;We've got a 100MB slide scan (10x10 tiles at 400x) stiched and hosted.&lt;/p&gt;
+&lt;p&gt;Check out the source at &lt;a class="reference external" href="http://tiles.python-friends.com.s3-website-ap-southeast-2.amazonaws.com/"&gt;http://tiles.python-friends.com.s3-website-ap-southeast-2.amazonaws.com&lt;/a&gt;.&lt;/p&gt;</description><category>auto-scope</category><category>leaflet</category><guid>/posts/partial-slide-scan/</guid><pubDate>Sun, 21 Oct 2018 14:00:00 GMT</pubDate></item><item><title>Looking at microscope slides with computer vision</title><link>/posts/auto-scope-progress/</link><dc:creator>Wytamma</dc:creator><description>&lt;div&gt;&lt;p&gt;We are making progress on the auto-scope project! The mechanical aspects of the microscope are all finished and working*. We’ve written most of the code to control the x, y, and z of the microscope and we’re starting to move onto the whole slide stitching and machine learning aspects of the project.&lt;/p&gt;
+&lt;p&gt;Check out this (oldish) video of the stage moving around. Look at it go!&lt;/p&gt;
+&lt;div class="youtube-video align-center"&gt;
+&lt;iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/3XsQCkF1SrE?rel=0&amp;amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="/posts/auto-scope-progress/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>auto-scope</category><category>cv2</category><guid>/posts/auto-scope-progress/</guid><pubDate>Mon, 15 Oct 2018 14:00:00 GMT</pubDate></item><item><title>Auto-Scope - Stage Driver V1</title><link>/posts/auto-scope-stage-driver/</link><dc:creator>Wytamma</dc:creator><description>&lt;div&gt;&lt;p&gt;
+  I finished the stage driver prototype for our programmable microscope project: Auto-Scope.
+&lt;/p&gt;
+&lt;img src="/images/auto-scope-1.png"&gt;
+&lt;p&gt;
+  The design is pretty simple; there are two mounting points on the stage that I chose to use to support the unit.
+  The unit is designed to be modular for easy printing and upgrading.
+  I had to print a few parts along the way while I iterated on the design, but it's now looking pretty good. 
+  The final design is currently printing on my CR-10 and will hopefully come out as depicted above. 
+  Once it's assembled the real fun (aka the Python) can start! 
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="/posts/auto-scope-stage-driver/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>auto-scope</category><category>fusion360</category><guid>/posts/auto-scope-stage-driver/</guid><pubDate>Sat, 18 Aug 2018 10:00:00 GMT</pubDate></item><item><title>Auto-Scope</title><link>/posts/auto-scope/</link><dc:creator>Wytamma</dc:creator><description>&lt;p&gt;
+  At the last meeting, the group decided that python-friends should take a more hands-on project based turn. The nominate project is to build an open source whole slide scanner and automated cell discrimination and counting system. This project will involve many aspects of Python programming from controlling motors to building deep learning classifiers. We will work on this project at the weekly meetings. All are welcome to contribute, and no previous background is required.
+&lt;/p&gt;
+&lt;p&gt;
+  Follow our progress on this blog.
+&lt;/p&gt;
+&lt;p&gt;
+  Counting 80,000+ blood cells by hand will drive anyone to search for alternatives. A recent project I worked on involved looking for parasites in freshwater turtle blood cells (lots of turtle blood cells...).
+  Due to the exotic nature of turtle cells, there are no readily available cell counting systems, and with the prospect of counting another 100,000+ cells I think we need to make one. Luckily we have &lt;a href="https://xkcd.com/353/"&gt;Python super powers&lt;/a&gt;!
+&lt;/p&gt;
+&lt;p&gt;
+  The first part of the project involves designing motor mounts to control the stage and focus. I'm going to work on this over the weekend, and hopefully, we'll have a system to start prototyping code on Monday.
+&lt;/p&gt;</description><category>auto-scope</category><category>automation</category><guid>/posts/auto-scope/</guid><pubDate>Fri, 17 Aug 2018 10:00:00 GMT</pubDate></item></channel></rss>
